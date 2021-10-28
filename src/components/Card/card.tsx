@@ -7,9 +7,9 @@ interface CardProps {
 const Card = ({ name, age, hobby }: CardProps) => {
   return (
     <>
-      <p>
+      <li>
         {name} tem {age} anos e seu hobby é {hobby}
-      </p>
+      </li>
     </>
   );
 };

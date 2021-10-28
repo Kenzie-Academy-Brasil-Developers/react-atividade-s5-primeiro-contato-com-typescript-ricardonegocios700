@@ -18,6 +18,9 @@ function App() {
 
   const handleClick = (name: string, age: string, hobby: string) => {
     setPersons([...persons, { name: name, age: age, hobby: hobby }]);
+    setName("");
+    setAge("");
+    setHobby("");
   };
 
   return (
@@ -45,7 +48,7 @@ function App() {
           />
           <button onClick={() => handleClick(name, age, hobby)}>Salvar</button>
         </section>
-        <div>
+        <ul>
           {persons &&
             persons.map((item, index) => (
               <Card
@@ -55,7 +58,7 @@ function App() {
                 hobby={item.hobby}
               />
             ))}
-        </div>
+        </ul>
       </header>
     </div>
   );
