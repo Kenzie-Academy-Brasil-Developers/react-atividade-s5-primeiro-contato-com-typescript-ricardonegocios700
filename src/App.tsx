@@ -6,20 +6,20 @@ import Card from "./components/Card/card";
 
 interface Person {
   name: string;
-  age: string;
+  age: number;
   hobby: string;
 }
 
 function App() {
   const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<string>("");
+  const [age, setAge] = useState<number>(0);
   const [hobby, setHobby] = useState<string>("");
   const [persons, setPersons] = useState<Person[]>([]);
 
-  const handleClick = (name: string, age: string, hobby: string) => {
+  const handleClick = (name: string, age: number, hobby: string) => {
     setPersons([...persons, { name: name, age: age, hobby: hobby }]);
     setName("");
-    setAge("");
+    setAge(0);
     setHobby("");
   };
 
@@ -37,8 +37,8 @@ function App() {
           <Input
             placeholder="Idade"
             label="Idade"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
+            //value={age}
+            onChange={(e) => setAge(Number(e.target.value))}
           />
           <Input
             placeholder="Hobby"

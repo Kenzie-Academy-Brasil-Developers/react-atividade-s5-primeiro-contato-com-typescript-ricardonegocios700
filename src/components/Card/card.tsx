@@ -1,6 +1,6 @@
 interface CardProps {
   name: string;
-  age: string;
+  age: number;
   hobby: string;
 }
 
